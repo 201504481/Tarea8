@@ -6,7 +6,7 @@ import json
 app = Flask(__name__)
 
 
-def favorite_colors() -> List[Dict]:
+def Materia() -> List[Dict]:
     config = {
         'user': 'root',
         'password': 'root',
@@ -16,8 +16,8 @@ def favorite_colors() -> List[Dict]:
     }
     connection = mysql.connector.connect(**config)
     cursor = connection.cursor()
-    cursor.execute('SELECT * FROM favorite_colors')
-    results = [{name: color} for (name, color) in cursor]
+    cursor.execute('SELECT * FROM Materia')
+    results = [{nombre: codigo} for (nombre, codigo) in cursor]
     cursor.close()
     connection.close()
 
@@ -26,7 +26,7 @@ def favorite_colors() -> List[Dict]:
 
 @app.route('/')
 def index() -> str:
-    return json.dumps({'favorite_colors': favorite_colors()})
+    return json.dumps({'Materia': Materia()})
 
 
 if __name__ == '__main__':
