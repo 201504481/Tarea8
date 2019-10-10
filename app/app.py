@@ -17,7 +17,7 @@ def Materia() -> List[Dict]:
     connection = mysql.connector.connect(**config)
     cursor = connection.cursor()
     cursor.execute('SELECT * FROM Materia')
-    results = [{name: color} for (name, color) in cursor]
+    results = [{nombre: codigo: creditos} for (nombre, codigo, creditos) in cursor]
     cursor.close()
     connection.close()
 
