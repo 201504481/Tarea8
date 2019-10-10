@@ -1,15 +1,13 @@
 CREATE DATABASE knights;
 use knights;
 
-CREATE TABLE Materia (
-  nombre VARCHAR(20),
-  codigo VARCHAR(20), 
-  creditos VARCHAR(20)
+CREATE TABLE favorite_colors (
+  name VARCHAR(20),
+  color VARCHAR(10)
 );
 
-INSERT INTO Materia
-  (nombre, codigo, creditos)
+INSERT INTO favorite_colors
+  (name, color)
 VALUES
-  ('Compiladores2', '780', '5'),
-  ('IPC1', '970', '5'), 
-  ('Arqui 1', '960', '6');
+  ('Lancelot', 'blue'),
+  ('Galahad', 'yellow');
